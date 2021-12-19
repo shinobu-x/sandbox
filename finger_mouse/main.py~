@@ -1,0 +1,22 @@
+import cv2
+import time
+import numpy as np
+import pyautogui
+from hand_detector import HandDetector
+
+frame_width=512
+frame_height=512
+frame_rate=1000
+smoothing=8
+previous_time=0
+previous_x=0
+precious_y=0
+current_x=0
+current_y=0
+capture=cv2.VideoCaptre(0)
+capture.set(3,frame_width)
+capture.set(4,frame_height)
+detector=HandDetector(max_hands=1)
+screen_width,screen_height=pyautogui.size()
+while True:
+    s

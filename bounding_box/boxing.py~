@@ -1,0 +1,23 @@
+import cv2
+import numpy as np
+
+class Box:
+    def __init__(self, x, y, w, h):
+        self.boxes = []
+        boxes.append([x, y, w, h])
+
+def boxing(image, boxes, color, alpha):
+    image = image.copy()
+    for box in boxes:
+        overlay = image.copy()
+        p1 = (int(b[0]), int(b[1]))
+        p2 = (int(b[0]+b[2]), int(b[1]+b[3]))
+        cv2.rectangle(overlay, p1, p2, color, -1)
+        image = cv2.addWeighted(image, alpha, overlay, 1-alpha, 0)
+    cv2.imshow('img', image)
+    cv2.waitKey()
+image = cv2.imread('./neko.jpeg',
+                   cv2.IMREAD_IGNORE_ORIENTATION|cv2.IMREAD_COLOR)
+
+boxes = Box(30, 60, 100, 100)
+print(boxes[0])
