@@ -25,7 +25,7 @@ while True:
         fingers = detector.get_fingers()
         width = frame_width-frame_reduction
         height = frame_height-frame_reduction
-        cv2.rectangle(frame,(frame_reduction,frame_reduction),(width,height),(255,0,255),2)
+        cv2.rectangle(frame,(frame_reduction,frame_reduction),(width,height),(0,0,255),2)
         if fingers[1] == 1 and fingers[2] == 0:
             x2 = np.interp(x,(frame_reduction,width),(0,screen_width))
             y2 = np.interp(y,(frame_reduction,height),(0, screen_height))

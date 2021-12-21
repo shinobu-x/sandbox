@@ -40,13 +40,13 @@ class HandDetector():
                 x_list.append(x)
                 y_list.append(y)
                 self.landmarks_list.append([id,x,y])
-                if draw: cv2.circle(frame,(x,y),5,(0,255,255),cv2.FILLED)
+                if draw: cv2.circle(frame,(x,y),5,(0,128,128),cv2.FILLED)
             x_min = min(x_list)
             x_max = max(x_list)
             y_min = min(y_list)
             y_max = max(y_list)
             bbox=x_min,y_min,x_max,y_max
-            if draw: cv2.rectangle(frame, (bbox[0]-bbox_size,bbox[1]-bbox_size),(bbox[2]+bbox_size,bbox[3]+bbox_size),(0,255,255),2)
+            if draw: cv2.rectangle(frame, (bbox[0]-bbox_size,bbox[1]-bbox_size),(bbox[2]+bbox_size,bbox[3]+bbox_size),(0,128,128),2)
         return self.landmarks_list,bbox
 
     def get_fingers(self):
