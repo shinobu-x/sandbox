@@ -20,11 +20,11 @@ d11 = [253, 245, 230] # OldLace
 d12 = [255, 228, 225] # MistyRose
 d13 = [218, 112, 214] # Orchid
 d14 = [138,  43, 226] # VlueViolet
-d15 = [ 75,   0, 130] # Indigo                                                                                                      
+d15 = [ 75,   0, 130] # Indigo
 colors_list = [[d0],[d1],[d2],[d3],[d4],[d5],[d6],[d7],[d8],[d9],[d10],[d11],[d12],[d13],[d14],[d15]]
 
-def coordination_2d(axes, range_x, range_y, grid = True,
-               xyline = True, xlabel = "x", ylabel = "y"):
+def coordination_2d(axes, range_x, range_y, grid = True, xyline = True,
+                    xlabel = "x", ylabel = "y"):
     axes.set_xlabel(xlabel, fontsize = 16)
     axes.set_ylabel(ylabel, fontsize = 16)
     axes.set_xlim(range_x[0], range_x[1])
@@ -32,8 +32,8 @@ def coordination_2d(axes, range_x, range_y, grid = True,
     if grid == True:
         axes.grid()
     if xyline == True:
-        axes.axhline(0.5, color = "black")
-        axes.axvline(0.5, color = "black")
+        axes.axhline(0, linewidth=0.1, color = "gray")
+        axes.axvline(0, linewidth=0.1, color = "gray")
 
 def coordination_3d(axes, range_x, range_y, range_z, grid = True):
     axes.set_xlabel("x", fontsize = 16)
